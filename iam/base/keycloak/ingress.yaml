@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
       - iam.lanlabs.ch
-      secretName: tls-secret
+      secretName: iam-tls-secret
   rules:
   - host: iam.lanlabs.ch
     http:
