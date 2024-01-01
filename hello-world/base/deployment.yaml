@@ -5,6 +5,7 @@ metadata:
   labels:
     app: hello-world
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: hello-world
@@ -16,5 +17,12 @@ spec:
       containers:
         - name: hello-world-container
           image: ghcr.io/beatlang/hello-world:next
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
+          env:
+            - name: SECRET_USERNAME 
+              valueFrom:
+                secretKeyRef:
+                  name: hello-world-secret
+                  key: username

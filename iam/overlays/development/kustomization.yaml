@@ -2,4 +2,4 @@ resources:
 - ../../base
 - ./namespace.yaml
 
-namespace: dev-hello-world
+namespace: dev-iam

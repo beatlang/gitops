@@ -1,0 +1,6 @@
+resources:
+- stateful-set.yaml
+- storage-class.yaml
+- storage.yaml
+- service.yaml
+
