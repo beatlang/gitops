@@ -34,8 +34,6 @@ spec:
                   key: password
             - name: KC_DB_URL_HOST
               value: postgres-service
-            - name: KC_CACHE_STACK
-              value: kubernetes
             - name: KC_DB_URL_DATABASE
               value: keycloak
             - name: KC_DB_PASSWORD
