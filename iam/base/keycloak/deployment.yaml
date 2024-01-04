@@ -19,7 +19,7 @@ spec:
           image: ghcr.io/beatlang/custom-keycloak:next
           imagePullPolicy: Always
           args: 
-            - start-dev
+            - start
             - --optimized
           env:
             - name: KEYCLOAK_ADMIN
