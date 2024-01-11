@@ -1,0 +1,51 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: postgres-backup
+  namespace: db-backup
+spec:
+  schedule: "0 */24 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: postgres-backup
+            image: ghcr.io/beatlang/postgres-backup:next
+            imagePullPolicy: IfNotPresent
+            env:
+            - name: PGHOST
+              value: postgres-service
+            - name: PGPORT
+              value: "4532"
+            - name: PGDATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: db_name
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: username
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: password
+            - name: AZ_STORAGE_ACCOUNT
+              valueFrom:
+                secretKeyRef:
+                  name: az-secret
+                  key: backup_storage_account
+            - name: AZ_CONTAINER
+              valueFrom:
+                secretKeyRef:
+                  name: az-secret
+                  key: backup_container
+            - name: AZ_ACCOUNT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: az-secret
+                  key: backup_account_key
