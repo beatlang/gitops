@@ -22,30 +22,30 @@ spec:
             - name: PGDATABASE
               valueFrom:
                 secretKeyRef:
-                  name: az-secret
+                  name: backup-secret
                   key: backup_db_name_1
             - name: PGUSER
               valueFrom:
                 secretKeyRef:
-                  name: az-secret
+                  name: backup-secret
                   key: backup_username_1
             - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: az-secret
+                  name: backup-secret
                   key: backup_password_1
             - name: AZ_STORAGE_ACCOUNT
               valueFrom:
                 secretKeyRef:
-                  name: az-secret
+                  name: backup-secret
                   key: backup_storage_account
             - name: AZ_CONTAINER
               valueFrom:
                 secretKeyRef:
-                  name: az-secret
+                  name: backup-secret
                   key: backup_container
             - name: AZ_ACCOUNT_KEY
               valueFrom:
                 secretKeyRef:
-                  name: az-secret
+                  name: backup-secret
                   key: backup_account_key
