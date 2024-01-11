@@ -1,0 +1,3 @@
+resources:
+- postgres-backup.yaml
+- namespace.yaml
