@@ -2,7 +2,6 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: postgres-backup
-  namespace: backup
 spec:
   schedule: "0 */24 * * *"
   jobTemplate:
@@ -22,18 +21,18 @@ spec:
             - name: PGDATABASE
               valueFrom:
                 secretKeyRef:
-                  name: backup-secret
-                  key: backup_db_name_1
+                  name: postgres-secret
+                  key: db_name
             - name: PGUSER
               valueFrom:
                 secretKeyRef:
-                  name: backup-secret
-                  key: backup_db_username_1
+                  name: postgres-secret
+                  key: username
             - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: backup-secret
-                  key: backup_db_password_1
+                  name: postgres-secret
+                  key: password
             - name: AZ_STORAGE_ACCOUNT
               valueFrom:
                 secretKeyRef:
