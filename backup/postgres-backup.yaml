@@ -28,12 +28,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: backup-secret
-                  key: backup_username_1
+                  key: backup_db_username_1
             - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
                   name: backup-secret
-                  key: backup_password_1
+                  key: backup_db_password_1
             - name: AZ_STORAGE_ACCOUNT
               valueFrom:
                 secretKeyRef:
