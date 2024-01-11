@@ -18,7 +18,7 @@ spec:
             - name: PGHOST
               value: postgres-service
             - name: PGPORT
-              value: "4532"
+              value: "5432"
             - name: PGDATABASE
               valueFrom:
                 secretKeyRef:
