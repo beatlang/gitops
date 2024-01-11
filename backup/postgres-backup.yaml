@@ -13,7 +13,7 @@ spec:
           containers:
           - name: postgres-backup
             image: ghcr.io/beatlang/postgres-backup:next
-            imagePullPolicy: IfNotPresent
+            imagePullPolicy: Always
             env:
             - name: PGHOST
               value: postgres-service
