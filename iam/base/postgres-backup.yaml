@@ -9,6 +9,7 @@ spec:
       template:
         spec:
           restartPolicy: OnFailure
+          maxRetries: "3"
           containers:
           - name: postgres-backup
             image: ghcr.io/beatlang/postgres-backup:next
