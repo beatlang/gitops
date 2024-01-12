@@ -3,13 +3,12 @@ kind: CronJob
 metadata:
   name: postgres-backup
 spec:
-  schedule: "0 */24 * * *"
+  schedule: "*/5 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           restartPolicy: OnFailure
-          maxRetries: "3"
           containers:
           - name: postgres-backup
             image: ghcr.io/beatlang/postgres-backup:next
@@ -49,3 +48,4 @@ spec:
                 secretKeyRef:
                   name: backup-secret
                   key: backup_account_key
+      backoffLimit: 3
