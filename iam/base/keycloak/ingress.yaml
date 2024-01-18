@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: keycloak-ingress
   annotations:
+    nginx.ingress.kubernetes.io/proxy-buffer-size": "128k"
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: lets-encrypt
 spec:
