@@ -4,48 +4,50 @@ metadata:
   name: postgres-backup
 spec:
   schedule: "0 */24 * * *"
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 1
   jobTemplate:
     spec:
       template:
         spec:
           restartPolicy: OnFailure
           containers:
-          - name: postgres-backup
-            image: ghcr.io/beatlang/postgres-backup:next
-            imagePullPolicy: Always
-            env:
-            - name: PGHOST
-              value: postgres-service
-            - name: PGPORT
-              value: "5432"
-            - name: PGDATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: db_name
-            - name: PGUSER
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: username
-            - name: PGPASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: password
-            - name: AZ_STORAGE_ACCOUNT
-              valueFrom:
-                secretKeyRef:
-                  name: backup-secret
-                  key: backup_storage_account
-            - name: AZ_CONTAINER
-              valueFrom:
-                secretKeyRef:
-                  name: backup-secret
-                  key: backup_container
-            - name: AZ_ACCOUNT_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: backup-secret
-                  key: backup_account_key
+            - name: postgres-backup
+              image: ghcr.io/beatlang/postgres-backup:next
+              imagePullPolicy: Always
+              env:
+                - name: PGHOST
+                  value: postgres-service
+                - name: PGPORT
+                  value: "5432"
+                - name: PGDATABASE
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres-secret
+                      key: db_name
+                - name: PGUSER
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres-secret
+                      key: username
+                - name: PGPASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres-secret
+                      key: password
+                - name: AZ_STORAGE_ACCOUNT
+                  valueFrom:
+                    secretKeyRef:
+                      name: backup-secret
+                      key: backup_storage_account
+                - name: AZ_CONTAINER
+                  valueFrom:
+                    secretKeyRef:
+                      name: backup-secret
+                      key: backup_container
+                - name: AZ_ACCOUNT_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: backup-secret
+                      key: backup_account_key
       backoffLimit: 3
