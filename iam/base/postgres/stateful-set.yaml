@@ -15,32 +15,32 @@ spec:
         app: postgres
     spec:
       containers:
-      - name: postgres
-        image: postgres:16-alpine
-        imagePullPolicy: IfNotPresent
-        env:
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: postgres-secret
-                key: password
-          - name: POSTGRES_USER
-            valueFrom:
-              secretKeyRef:
-                name: postgres-secret
-                key: username
-          - name: POSTGRES_DB
-            valueFrom:
-              secretKeyRef:
-                name: postgres-secret
-                key: db_name
-        ports:
-        - containerPort: 5432
-          name: postgres
-        volumeMounts:
-        - name: pv-data
-          mountPath: /var/lib/postgresql/data
+        - name: postgres
+          image: postgres:16-alpine
+          imagePullPolicy: Always
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: password
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: username
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: db_name
+          ports:
+            - containerPort: 5432
+              name: postgres
+          volumeMounts:
+            - name: pv-data
+              mountPath: /var/lib/postgresql/data
       volumes:
-      - name: pv-data
-        persistentVolumeClaim:
-          claimName: postgres-pv-claim
+        - name: pv-data
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
