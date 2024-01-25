@@ -37,5 +37,5 @@ CERT_SRIPT_PATH="./kubeseal/kubeseal.sh"
 
 source $MICROK8S_SCRIPT_PATH
 source $ARGOCD_SRIPT_PATH
-source $KUBESEAL_SRIPT_PATH
 source $CERT_SRIPT_PATH
+source $KUBESEAL_SRIPT_PATH
