@@ -33,7 +33,7 @@ echo "Run the script with username: $USERNAME"
 MICROK8S_SCRIPT_PATH="./microk8s/microk8s.sh"
 ARGOCD_SRIPT_PATH="./argo/argocd.sh"
 KUBESEAL_SRIPT_PATH="./kubeseal/kubeseal.sh"
-CERT_SRIPT_PATH="./kubeseal/kubeseal.sh"
+CERT_SRIPT_PATH="./cert-manager/cert.sh"
 
 source $MICROK8S_SCRIPT_PATH
 source $ARGOCD_SRIPT_PATH
