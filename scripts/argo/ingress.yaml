@@ -12,16 +12,16 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - argocd.lanlabs.ch
-      secretName: argo-cd-tls-secrete
+        - argocd.lanlabs.ch
+      secretName: argo-cd-tls-secret
   rules:
     - host: argocd.lanlabs.ch
       http:
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: argo-cd-argocd-server
-              port:
-                name: http
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argo-cd-argocd-server
+                port:
+                  name: http
