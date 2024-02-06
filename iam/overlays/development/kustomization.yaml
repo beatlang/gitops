@@ -10,4 +10,4 @@ images:
     newTag: 1.0.1
   - name: custom-keycloak
     newName: ghcr.io/beatlang/custom-keycloak
-    newTag: next
+    newTag: 1.0.0
