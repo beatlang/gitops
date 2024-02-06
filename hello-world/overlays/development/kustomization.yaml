@@ -7,4 +7,4 @@ namespace: dev-hello-world
 images:
   - name: hello-world
     newName: ghcr.io/beatlang/hello-world
-    newTag: next
+    newTag: 1.0.0
