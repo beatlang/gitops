@@ -1,5 +1,10 @@
 resources:
-- ../../base
-- ./namespace.yaml
+  - ../../base
+  - ./namespace.yaml
 
 namespace: dev-hello-world
+
+images:
+  - name: hello-world
+    newName: ghcr.io/beatlang/hello-world
+    newTag: next

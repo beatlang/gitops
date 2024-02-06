@@ -13,8 +13,8 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: postgres-backup
-              image: ghcr.io/beatlang/postgres-backup:next
-              imagePullPolicy: Always
+              image: postgres-backup
+              imagePullPolicy: IfNotPresent
               env:
                 - name: PGHOST
                   value: postgres-service

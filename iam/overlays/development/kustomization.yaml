@@ -1,5 +1,13 @@
 resources:
-- ../../base
-- ./namespace.yaml
+  - ../../base
+  - ./namespace.yaml
 
 namespace: dev-iam
+
+images:
+  - name: postgres-backup
+    newName: ghcr.io/beatlang/postgres-backup
+    newTag: 1.0.1
+  - name: custom-keycloak
+    newName: ghcr.io/beatlang/custom-keycloak
+    newTag: next

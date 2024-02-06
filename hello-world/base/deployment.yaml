@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: hello-world-container
-          image: ghcr.io/beatlang/hello-world:next
-          imagePullPolicy: Always
+          image: hello-world
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
           env:
-            - name: SECRET_USERNAME 
+            - name: SECRET_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: hello-world-secret
