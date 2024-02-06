@@ -9,5 +9,5 @@ images:
     newName: ghcr.io/beatlang/postgres-backup
     newTag: 1.0.1
   - name: keycloak
-    newName: ghcr.io/beatlang/custom-keycloak
+    newName: ghcr.io/beatlang/keycloak
     newTag: 1.0.0
