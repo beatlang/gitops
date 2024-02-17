@@ -15,7 +15,7 @@ spec:
         app: kmp-rst-lp21
     spec:
       imagePullSecrets:
-        - name: docker-config-secret
+        - name: docker-secret
       containers:
         - name: kmp-rst-lp21-container
           image: kmp-rst-lp21
