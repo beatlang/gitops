@@ -12,7 +12,7 @@ spec:
         - lp21.lanlabs.ch
       secretName: kpt-rst-lp21-tls-secrete
   rules:
-    - host: hello.lanlabs.ch
+    - host: lp21.lanlabs.ch
       http:
         paths:
           - path: /
