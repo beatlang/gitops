@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kmp-rst-lp21-deployment
+  labels:
+    app: kmp-rst-lp21
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kmp-rst-lp21
+  template:
+    metadata:
+      labels:
+        app: kmp-rst-lp21
+    spec:
+      containers:
+        - name: kmp-rst-lp21-container
+          image: kmp-rst-lp21
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: SECRET_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: kmp-rst-lp21-secret
+                  key: username
