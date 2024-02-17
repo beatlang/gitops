@@ -21,8 +21,8 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: SECRET_USERNAME
+            - name: LP21_DB_CONNECTION_STRING
               valueFrom:
                 secretKeyRef:
                   name: kmp-rst-lp21-secret
-                  key: username
+                  key: LP21_DB_CONNECTION_STRING
