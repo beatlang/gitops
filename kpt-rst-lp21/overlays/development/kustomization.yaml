@@ -6,5 +6,5 @@ namespace: dev-kpt-rst-lp21
 
 images:
   - name: kpt-rst-lp21
-    newName: ghcr.io/beatlang/kpt-rst-lp21
+    newName: ghcr.io/beatlang/kpt-rst-21
     newTag: 1.0.0
