@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: dev-kmp-rst-lp21
+  name: dev-kpt-rst-lp21

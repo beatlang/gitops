@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: kmp-rst-lp21-ingress
+  name: kpt-rst-lp21-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: lets-encrypt
@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - lp21.lanlabs.ch
-      secretName: kmp-rst-lp21-tls-secrete
+      secretName: kpt-rst-lp21-tls-secrete
   rules:
     - host: hello.lanlabs.ch
       http:
@@ -19,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: kmp-rst-lp21-service
+                name: kpt-rst-lp21-service
                 port:
                   name: http

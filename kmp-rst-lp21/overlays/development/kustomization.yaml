@@ -2,9 +2,9 @@ resources:
   - ../../base
   - ./namespace.yaml
 
-namespace: dev-kmp-rst-lp21
+namespace: dev-kpt-rst-lp21
 
 images:
-  - name: kmp-rst-lp21
-    newName: ghcr.io/beatlang/kmp-rst-lp21
+  - name: kpt-rst-lp21
+    newName: ghcr.io/beatlang/kpt-rst-lp21
     newTag: 1.0.0

@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kmp-rst-lp21-deployment
+  name: kpt-rst-lp21-deployment
   labels:
-    app: kmp-rst-lp21
+    app: kpt-rst-lp21
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kmp-rst-lp21
+      app: kpt-rst-lp21
   template:
     metadata:
       labels:
-        app: kmp-rst-lp21
+        app: kpt-rst-lp21
     spec:
       imagePullSecrets:
-        - name: docker-secret
+        - name: docker-config-secret
       containers:
-        - name: kmp-rst-lp21-container
-          image: kmp-rst-lp21
+        - name: kpt-rst-lp21-container
+          image: kpt-rst-lp21
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -26,5 +26,5 @@ spec:
             - name: LP21_DB_CONNECTION_STRING
               valueFrom:
                 secretKeyRef:
-                  name: kmp-rst-lp21-secret
+                  name: kpt-rst-lp21-secret
                   key: LP21_DB_CONNECTION_STRING
