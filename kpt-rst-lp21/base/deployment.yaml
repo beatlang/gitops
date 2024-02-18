@@ -15,7 +15,7 @@ spec:
         app: kpt-rst-lp21
     spec:
       imagePullSecrets:
-        - name: docker-config-secret
+        - name: ghcr-login-secret
       containers:
         - name: kpt-rst-lp21-container
           image: kpt-rst-lp21
