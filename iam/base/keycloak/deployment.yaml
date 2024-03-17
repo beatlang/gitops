@@ -14,6 +14,12 @@ spec:
       labels:
         app: keycloak
     spec:
+      hard:
+        pods: "2"
+        requests.cpu: "2"
+        requests.memory: 2Gi
+        limits.cpu: "4"
+        limits.memory: 4Gi
       containers:
         - name: keycloak
           image: keycloak
