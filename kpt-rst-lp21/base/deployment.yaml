@@ -14,16 +14,17 @@ spec:
       labels:
         app: kpt-rst-lp21
     spec:
-      hard:
-        pods: "2"
-        requests.cpu: "2"
-        requests.memory: 1Gi
-        limits.cpu: "4"
-        limits.memory: 2Gi
       imagePullSecrets:
         - name: docker-config-secret
       containers:
         - name: kpt-rst-lp21-container
+          resources:
+            requests:
+              cpu: "1"
+              memory: 1Gi
+            limits:
+              cpu: "2"
+              memory: 2Gi
           image: kpt-rst-lp21
           imagePullPolicy: IfNotPresent
           ports:
