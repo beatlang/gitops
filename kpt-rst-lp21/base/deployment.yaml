@@ -20,11 +20,11 @@ spec:
         - name: kpt-rst-lp21-container
           resources:
             requests:
-              cpu: "2"
+              cpu: "1000m"
               memory: 1Gi
             limits:
-              cpu: "4"
-              memory: 2Gi
+              cpu: "1500m"
+              memory: 1Gi
           image: kpt-rst-lp21
           imagePullPolicy: IfNotPresent
           ports:
